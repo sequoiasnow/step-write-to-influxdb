@@ -9,6 +9,7 @@ To publish and updated coverage report
 
 ```yml
 - write-to-influxdb:
+    url: example.com/db
     user: malcomreynolds
     password: flowerbonnet
     database: serenity
@@ -23,6 +24,7 @@ Or use the data_binary to write manually
 
 ```yml
 - write-to-influxdb:
+    url: example.com/db
     user: malcomreynolds
     password: flowerbonnet
     database: serenity

@@ -1,0 +1,36 @@
+name: write-to-influxdb
+version: 1.0.0
+descrition: Writes a measurement to InfluxDB
+keyowrds:
+  - influxdb
+properties:
+  user:
+    type: string
+    required: true
+  password:
+    type: string
+    required: true
+  database:
+    type: string
+    required: true
+  url:
+    type: string
+    required: true
+  port:
+    type: string
+    required: false
+  timestamp:
+    type: string
+    required: false
+  measurement:
+    type: stirng
+    required: false
+  value:
+    type: string
+    required: false
+  tags:
+    type: string
+    required: false
+  data_binary:
+    type: string
+    required: false
