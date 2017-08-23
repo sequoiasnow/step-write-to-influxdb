@@ -20,12 +20,16 @@ if [ ! $data_binary ]; then
     # Ensure that required information for data bindary is present.
     if [ ! $measurement ]; then echo "please provide a measurement"; exit; fi
     if [ ! $value ]; then echo "please provide a value"; exit; fi
-    if [ ! $tags ]; then tags=""; fi
+    if [ ! $tags ]; then
+        tags="";
+    else
+        tags=",$tags"
+    fi
     
     # Create the data binary string as seen
     # [[here https://docs.influxdata.com/influxdb/v0.9/guides/writing_data/]]
-    data_binary="$measurement,$tags value=$value $timestamp"
+    data_binary="$measurement$tags value=$value $timestamp"
 fi
 
 # Execute curl command
-curl -i -G -XPOST $url?db=$database --data-binary -u $user:$password --data-binary '$data_binary'
+curl -i -XPOST -u '$user:$password' $url:$port/write?db=$database --data-binary '$data_binary'
