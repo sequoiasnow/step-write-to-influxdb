@@ -28,4 +28,4 @@ if [ ! $data_binary ]; then
 fi
 
 # Execute curl command
-curl -i -G -XPOST $url --data-binary -u $user:$password --data-binary '$data_binary'
+curl -i -G -XPOST $url?db=$database --data-binary -u $user:$password --data-binary '$data_binary'
