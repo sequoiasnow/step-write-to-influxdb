@@ -1,5 +1,5 @@
 name: write-to-influxdb
-version: 1.0.6
+version: 1.0.7
 descrition: Writes a measurement to InfluxDB
 keyowrds:
   - influxdb
