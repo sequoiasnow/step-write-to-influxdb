@@ -8,7 +8,7 @@ port=$WERCKER_WRITE_TO_INFLUXDB_PORT
 timestamp=$WERCKER_WRITE_TO_INFLUXDB_TIMESTAMP
 measurement=$WERCKER_WRITE_TO_INFLUXDB_MEASUREMENT
 value=$WERCKER_WRITE_TO_INFLUXDB_VALUE
-tags==$WERCKER_WRITE_TO_INFLUXDB_TAGS
+tags=$WERCKER_WRITE_TO_INFLUXDB_TAGS
 data_binary=$WERCKER_WRITE_TO_INFLUXDB_DATA_BINARY
 
 # Account for default values
@@ -32,5 +32,5 @@ if [ ! $data_binary ]; then
 fi
 
 # Execute curl command
-echo "curl -i -XPOST -u '$user:$password' $url:$port/write?db=$database --data-binary '$data_binary'"
+echo "curl -i -XPOST -u \"$user:$password\" '$url:$port/write?db=$database' --data-binary '$data_binary'"
 curl -i -XPOST -u "$user:$password" '$url:$port/write?db=$database' --data-binary '$data_binary'
