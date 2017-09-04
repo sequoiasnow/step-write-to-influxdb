@@ -33,4 +33,4 @@ fi
 
 # Execute curl command
 echo "curl -i -XPOST -u \"$user:$password\" '$url:$port/write?db=$database' --data-binary '$data_binary'"
-curl -i -XPOST -u "$user:$password" '$url:$port/write?db=$database' --data-binary '$data_binary'
+curl -i -XPOST -u "$user:$password" "$url:$port/write?db=$database" --data-binary "$data_binary"
