@@ -12,8 +12,8 @@ tags=$WERCKER_WRITE_TO_INFLUXDB_TAGS
 data_binary=$WERCKER_WRITE_TO_INFLUXDB_DATA_BINARY
 
 # Account for default values
-if [ ! $timestamp ]; then timestamp=$(date +%s); fi
-if [ ! $port ]; then port="8086"; fi
+if [ ! $timestamp ]; then timestamp=''; fi 
+if [ ! $port ]; then port="8086"; fi 
 
 # Resolve the data binary 
 if [ ! $data_binary ]; then
